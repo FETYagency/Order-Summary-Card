@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+/* css reset */
+
+*{
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+    /* border: 1px red solid; */
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* the variables store */
+
+:root{
+    font-size: 16px;
+
+    /* colors */
+
+    --Paleblue: hsl(225, 100%, 94%);
+    --Brightblue: hsl(245, 75%, 52%);
+    --Verypaleblue: hsl(225, 100%, 98%);
+    --Desaturatedblue: hsl(224, 23%, 55%);
+    --Darkblue: hsl(223, 47%, 23%);
+    /* weights */
+
+    --Semibold:500;
+    --bold:700;
+    --extra-bold:900;
+}
+
+main{
+    height: 100vh;
+    position: relative;
+    background: url(../images/pattern-background-mobile.svg) top no-repeat;
+    background-size: contain;
+    background-color: var(--Paleblue);
+}
+.card{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(350px, 90%);
+    border-radius: 20px;
+}
+.hero{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+}
+.flex-container{
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+.flex-container>h1{
+    font-weight: var(--extra-bold);
+    font-size: 1.4rem;
+    color: var(--Darkblue);
+}
+.flex-container>p{
+    line-height: 1.7;
+    width: min(270px, 100%);
+    color: var(--Desaturatedblue);
+}
+.plan-type{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--Verypaleblue);
+    border-radius: 15px;
+    padding: 1rem;
+}
+.plan-type>.type{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.plan-type>.type>.details>p:not(p:nth-child(2)){
+    font-weight: var(--extra-bold);
+    line-height: 1.6;
+    color: var(--Darkblue);
+    font-size: .93rem;
+}
+.plan-type>.type>.details>p:not(p:nth-child(1)){
+    color: var(--Desaturatedblue);
+    font-size: .9rem;
+}
+.plan-type>a{
+    color: var(--Brightblue);
+    font-size: .9rem;
+    font-weight: var(--bold);
+    transition: all .2s ease;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+.buttons>a{
+    width: 100%;
+    cursor: pointer;
+}
+.primary-btn{
+    text-decoration: none;
+    display: block;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--Brightblue);
+    color: white;
+    font-weight: var(--bold);
+    box-shadow: 0px 25px 20px rgba(22, 1, 131, 0.145);
+    transition: all .2s ease;
+}
+.secondary-btn{
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    color: var(--Desaturatedblue);
+    font-weight: var(--bold);   
+    transition: all .2s ease;
+}
+ .primary-btn:hover{
+    background-color: rgb(146, 129, 179);
+}
+.change-btn:hover{
+    color: rgb(146, 129, 179);
+}
+.secondary-btn:hover{
+    color: var(--Darkblue);
+}
+
+@media (min-width: 500px){
+    main{
+        background-image: url(../images/pattern-background-desktop.svg);
+    }
+    .card{
+        width: min(410px, 100%);
+    }
+    .card>.flex-container>p{
+        width: min(340px, 100%);
+    }
+}
